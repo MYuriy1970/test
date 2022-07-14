@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>СтильныйСписок</title>
+
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      ol {
+        list-style-type: none;
+        counter-reset: count;
+      }
+
+      li {
+        background-color: rgb(100, 70, 34);
+        margin-top: 5px;
+        padding: 10px 35px;
+        border-radius: 5px;
+        width: 300px;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      li::before {
+        content: counter(count);
+        counter-increment: count;
+        background-color: rgb(98, 98, 126);
+        display: block;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 5px solid white;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 0;
+        font-weight: bold;
+      }
+
+      li:hover {
+        cursor: pointer;
+      }
+
+      li:hover::before {
+        height: 110%;
+        font-size: 1.2em;
+      }
+    </style>
   </head>
   <body>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <ol>
+      <li>Элемент списка</li>
+      <li>Элемент списка</li>
+      <li>Элемент списка</li>
+      <li>Элемент списка</li>
+      <li>Элемент списка</li>
+    </ol>
   </body>
 </html>
